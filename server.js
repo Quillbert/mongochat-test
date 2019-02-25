@@ -2,7 +2,7 @@ const mongo = require('mongodb').MongoClient;
 const client = require('socket.io').listen(4000).sockets;
 
 // Connect to mongo
-mongo.connect('mongodb://127.0.0.1/mongochat', function(err, db){
+mongo.connect('mongodb://default:123@quill-shard-00-00-9rl1h.mongodb.net:27017,quill-shard-00-01-9rl1h.mongodb.net:27017,quill-shard-00-02-9rl1h.mongodb.net:27017/test?ssl=true&replicaSet=Quill-shard-0&authSource=admin&retryWrites=true', function(err, db){
     if(err){
         throw err;
     }
